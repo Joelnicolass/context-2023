@@ -3,6 +3,7 @@ import RootLayout from "./components/layouts/root_layout/root_layout";
 import Product from "./components/product/product";
 import ListProducts from "./components/list_products/list_products";
 import { CartContext, CartProvider } from "./context/cart_context";
+import Reducers from "./reducers/reducers";
 
 const products = [
   {
@@ -21,6 +22,7 @@ const App = () => {
       <CartProvider>
         <RootLayout>
           <ListProducts products={products} />
+          <Reducers />
         </RootLayout>
       </CartProvider>
     </>

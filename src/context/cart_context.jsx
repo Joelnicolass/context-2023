@@ -4,15 +4,21 @@ import { createContext, useContext, useState } from "react";
 export const CartContext = createContext();
 
 // CREA EL PROVEEDOR Y PERMITE AISLAR LA LOGICA
+/* 
+
 export const CarritoProvider = ({ children }) => {
   return <CartContext.Provider value={{}}>{children}</CartContext.Provider>;
 };
 
+ */
+
 // CREA EL CONSUMIDOR
-export const useCarritoContext = () => {
+/*
+ export const useCarritoContext = () => {
   const contexto = useContext(CartContext);
   return contexto;
-};
+}; 
+*/
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(0);
