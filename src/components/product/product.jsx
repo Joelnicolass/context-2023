@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useCartContext } from "../../context/cart_context";
 
 const Product = ({ product }) => {
-  const { addProduct, removeProduct } = useCartContext();
+  const { dispatch, types, state } = useCartContext();
 
   return (
     <div
@@ -21,14 +21,21 @@ const Product = ({ product }) => {
       <div>
         <button
           onClick={() => {
-            removeProduct();
+            dispatch({
+              type: types.REMOVE_PRODUCT_TYPE,
+              payload: product,
+            });
           }}
         >
           -
         </button>
+        <span>{state.products.get(product.id)?.quantity || 0}</span>
         <button
           onClick={() => {
-            addProduct();
+            dispatch({
+              type: types.ADD_PRODUCT_TYPE,
+              payload: product,
+            });
           }}
         >
           +

@@ -7,12 +7,14 @@ import Reducers from "./reducers/reducers";
 
 const products = [
   {
-    id: crypto.randomUUID(),
+    id: "00001",
     title: "PAN",
+    price: 200,
   },
   {
-    id: crypto.randomUUID(),
+    id: "00002",
     title: "FACTURAS",
+    price: 100,
   },
 ];
 
